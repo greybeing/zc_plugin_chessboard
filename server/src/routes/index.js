@@ -33,7 +33,7 @@ router.get("/dbGameResult", ResultCtrl.createGameResult);
 
 
 //fetch game result using player_id
-router.get("/dbfetchResult", ResultCtrl.fetchGameResult);
+router.get("/dbfetchResult/:id", ResultCtrl.fetchGameResult);
 
 
 // update game with result id in db

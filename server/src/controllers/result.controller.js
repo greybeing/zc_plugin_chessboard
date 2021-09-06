@@ -24,8 +24,8 @@ class ResultController {
   
  async fetchGameResult(req, res) {
   try {
-   
-    const response =  await Result.fetchOne(req.params.id);
+     const id = req.params.id;
+    const response =  await Result.fetchOne(id);
     
     res.status(200).send(appResponse(null, response, true));
   } catch (error) {
