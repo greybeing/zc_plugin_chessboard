@@ -20,6 +20,20 @@ class ResultController {
       throw new CustomError("Could not create user", "500");
     }
   }
+
+  
+ async fetchGameResult(req, res) {
+  try {
+   
+    const response =  await Result.fetchOne(req.params.id);
+    
+    res.status(200).send(appResponse(null, response, true));
+  } catch (error) {
+    throw new CustomError("Could not fetch result", "500");
+  }
+}
+
+
   async updateGameResult(req, res) {
     try {
       const { body } = req;
